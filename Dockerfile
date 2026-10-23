@@ -1,4 +1,3 @@
-@'
 FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
@@ -17,4 +16,3 @@ RUN composer install --no-dev --optimize-autoloader
 
 EXPOSE 8080
 CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
-'@ | Set-Content -Path Dockerfile -Encoding UTF8
